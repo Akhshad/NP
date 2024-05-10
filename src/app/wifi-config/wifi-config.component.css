@@ -1,0 +1,31 @@
+/* .mat-radio-button.mat-radio-button-unchecked .mat-radio-outer-circle {
+    background-color: ;
+  } */
+/* 
+  .mat-radio-button.mat-radio-button-checked .mat-radio-outer-circle {
+    background-color: #4D6CE1;
+  } */
+
+  mat-card {
+    background: #191547;
+    color: whitesmoke;
+  }
+
+  .example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  } 
+
+ h3{ 
+    margin: 0 10px;
+ }

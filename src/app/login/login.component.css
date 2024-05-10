@@ -1,0 +1,15 @@
+
+
+  .login-box {
+    border-radius: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Optional: Set container height to fill viewport */
+  }

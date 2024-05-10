@@ -1,0 +1,70 @@
+
+<app-sidebar></app-sidebar>
+<div class="container col-lg-10 pt-3">
+    <mat-card>
+    <mat-card-content>
+        <h2>Wi-Fi Configuration</h2>
+        <mat-divider></mat-divider>
+        <div class="row">
+            <section class="example-section">
+                <div class="col-lg-3">
+                <label class="example-margin">Status:</label>
+            </div>
+                <mat-radio-group [(ngModel)]="labelPosition">
+                  <mat-radio-button color="primary" class="example-margin" value="after"><h3 style="color: aliceblue;">Enabled</h3></mat-radio-button>
+                  <mat-radio-button  class="example-margin" value="before"><h3 style="color: aliceblue;">Disabled</h3></mat-radio-button>
+                </mat-radio-group>
+              </section>
+        </div>
+
+        <div class="row align-items-center j" >
+            <div class="col-lg-3 ">
+             <h3>Network Name (SSID):</h3>
+            </div>
+            <div class="col-lg-7 " >
+                <mat-form-field appearance="outline" >
+                    <mat-label style="color: whitesmoke;">Input</mat-label>
+                    <input matInput [style.outlineColor]="'white'">
+                  </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <section class="example-section">
+                <div class="col-lg-3">
+                <label class="example-margin">SSID Broadcast:</label>
+            </div>
+                <mat-radio-group [(ngModel)]="label">
+                  <mat-radio-button color="primary" class="example-margin" value="after"><h3 style="color: aliceblue;">Enabled</h3></mat-radio-button>
+                  <mat-radio-button  class="margin" value="before"><h3 style="color: aliceblue;">Disabled</h3></mat-radio-button>
+                </mat-radio-group>
+              </section>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-3">
+                <h3>Slave Id:</h3>
+            </div>
+            <div class="col-lg-7">
+              <mat-form-field appearance="outline">
+                <mat-label style="color: whitesmoke;">Toppings</mat-label>
+                <mat-select style="color: whitesmoke;" [formControl]="toppings" multiple [disableOptionCentering]="false">
+                  <mat-select-trigger >
+                    {{ toppings.value?.[0] || '' }}
+                    <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+                      (+{{ (toppings.value?.length || 0) - 1 }} {{ toppings.value?.length === 2 ? 'other' : 'others' }})
+                    </span>
+                  </mat-select-trigger>
+                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{ topping }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+              
+            </div>
+        </div>
+
+        
+
+    </mat-card-content>
+    </mat-card>
+</div>

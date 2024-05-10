@@ -1,0 +1,64 @@
+    <div class="login-container" style="background: linear-gradient(114.01deg, #9434F6 1.26%, #1E217E 100%);">
+        <mat-card class="login-box">
+            <div class="row">
+                <!-- Column for the image -->
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <img mat-card-image style=" border-radius: 20px 0px 0px 20px; " src="../../assets/Login-image.png" alt="Login">
+                </div>
+                <!-- Column for the login form -->
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <mat-card-content>
+                        <div class="background-section">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-12 d-flex  justify-content-center">
+                                        <form class="form-container " [formGroup]="loginForm" (ngSubmit)="submit()">
+                                            <div class="form-group">
+                                                <h2 style="color:rgb(0, 0, 0)" class="text-center"><b>Sign In</b></h2>
+                                                <mat-form-field  class="user" appearance="outline">
+                                                    <mat-label>Enter your Username</mat-label>
+                                                    <mat-icon matPrefix><i class="material-icons">person</i></mat-icon>
+                                                    <input matInput formControlName="username" placeholder="" required>
+                                                    <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+                                                        Username is required
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="form-group">
+                                                <mat-form-field class="pw" appearance="outline">
+                                                    <mat-label>Enter your password</mat-label>
+                                                    <input matInput [type]="hide ? 'password' : 'text'"
+                                                        formControlName="password" required>
+                                                    <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                                                        Password is required
+                                                    </mat-error>
+                                                    <mat-error
+                                                        *ngIf="loginForm.get('password')?.hasError('minlength(8)') && !loginForm.get('password')?.hasError('required')">
+                                                        Password should be at least 8 characters long
+                                                    </mat-error>
+                                                    <button mat-icon-button matPrefix (click)="hide = !hide"
+                                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                                        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                                                    </button>
+                                                </mat-form-field>
+                                            </div>
+
+
+                                            <button
+                                                style="background:linear-gradient(90deg, #7450D6 -4.32%, #A056FC 105.4%); color: whitesmoke; "
+                                                mat-raised-button class="full-width-button" mat-card-xl-image>Sign
+                                                In</button>
+                                            <p class="text-center">
+                                                <a mat-button (click)="forgetPassword()" style="color: rgb(0, 0, 0);">Forgot
+                                                    Password?</a>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </div>                      
+            </div>
+        </mat-card>
+
